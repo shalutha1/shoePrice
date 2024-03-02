@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Predictor</title>
+</head>
+<body>
+   <div class="wrapper">
+       <div class="title">
+           Shoe Price Predictor </div>
+       <form action="/" method="POST">
+       <div class="inputfield">
+           <label for="brand">Brand</label>
+           <div class ="brand">
+               <select name="brand" id="brand">
+                   <option value="" selected hidden>Select Brand</option>
+                   <option value="nike">Nike</option>
+                   <option value="adidas">Adidas</option> 
+                   <option value="reebok">Reebok</option>
+                   <option value="converse">Converse</option>
+                   <option value="puma">Puma</option>
+                   <option value="vans">Vans</option> 
+                   <option value="new balance">New Balance</option> 
+                   <option value="asics">Asics</option>
+                   <option value="fila">Fila</option> 
+                   <option value="skechers">Skechers</option>
+               </select>
+           </div>
+           <div class="inputfield">
+               <label for="type">Type</label>
+               <div class ="type_select">
+                   <select name="type" id="type">
+                       <option value="" selected hidden>Select Type</option>
+                       <option value="sport">Sport</option>
+                       <option value="casual">Casual</option> 
+                       <option value="fashion">Fashion</option>
+                       <option value="lifestyle">Life Style</option>
+                       <option value="slides">Slides</option>
+                       <option value="retro">Retro</option>  
+                   </select>
+               </div>
+   <div class="check">
+       <div>
+           <label for="male">Male</label>
+           <input type="checkbox" name="male">
+           <label for="female">Female</label>
+           <input type="checkbox" name="female">
+       </div>
+   </div>
+   <div class="inputfield">
+       <label for="size">Size (UK)</label>
+       <input class="input" type="text" name="size" required>
+   </div>
+   <div class="inputfield">
+       <label for="color">Color</label>
+       <div class ="color_select">
+           <select name="color" id="color">
+               <option value="" selected hidden>Select Color</option>
+               <option value="black">Black</option>
+               <option value="white">White</option> 
+               <option value="grey">Grey</option>
+               <option value="black/white">Black/white</option>
+               <option value="pink">Pink</option> 
+               <option value="other">Other</option>
+           </select>
+       </div>
+       <div class="inputfield">
+           <label for="material">Material</label>
+           <div class ="material">
+               <select name="material" id="material">
+                   <option value="" selected hidden>Select Material</option>
+                   <option value="mesh">Mesh</option>
+                   <option value="leather">Leather</option> 
+                   <option value="canvas">Canvas</option>
+                   <option value="primeknit">Primeknit</option>
+                   <option value="leather/synthetic">Leather/Synthetic</option>
+                   <option value="synthetic">Synthetic</option> 
+                   <option value="mesh/synthetic">Mesh/Synthetic</option> 
+                   <option value="suede/mesh">Suede/Mesh</option>
+                   <option value="suede/canvas">Suede/Canvas</option> 
+                   <option value="suede">Suede</option>
+                   <option value="flyknit">Flyknit</option>
+                   <option value="knit">Knit</option>
+                   <option value="nylon">Nylon</option>
+                   <option value="other">Other</option> 
+               </select>
+           </div>
+   </div>
+   <div class="inputfield">
+       <input type="submit" class="btn" value="Predict Price">
+   </div>
+</form>
+   <div class="result">
+       {% if pred != 0 %}
+       <p>
+           Estimated Price : USD {{pred}}
+       </p>
+       {% endif %}
+   </div>
+</body>
+</html>
